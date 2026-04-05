@@ -29,8 +29,7 @@ export function LoginPage() {
       <div className="card login-card">
         <h1>Sign in</h1>
         <p className="login-hint muted">
-          Use seeded accounts after running <code>npm run seed</code> in the backend (for example{' '}
-          <strong>admin@example.com</strong>).
+          You can log in using demo accounts (Admin, Analyst, Viewer). Refer to the README for credentials.
         </p>
         <form className="form" onSubmit={onSubmit}>
           {error && <p className="error">{error}</p>}
