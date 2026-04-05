@@ -1,5 +1,14 @@
 const TOKEN_KEY = 'finance_token';
 
+/** Production / preview: set in Vercel to your Render API origin, e.g. https://your-api.onrender.com (no trailing slash) */
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
+function apiUrl(path: string): string {
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const p = path.startsWith('/') ? path : `/${path}`;
+  return API_BASE ? `${API_BASE}${p}` : p;
+}
+
 export type Role = 'viewer' | 'analyst' | 'admin';
 
 export type User = {
@@ -28,7 +37,7 @@ export async function api<T>(
   const t = getToken();
   if (t) headers.set('Authorization', `Bearer ${t}`);
 
-  const res = await fetch(path, { ...options, headers });
+  const res = await fetch(apiUrl(path), { ...options, headers });
   const text = await res.text();
   const data = text ? JSON.parse(text) : null;
 

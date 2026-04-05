@@ -7,6 +7,18 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
 import { errorHandler } from './middleware/errorHandler.js';
+
+/** Comma-separated list or single URL; empty → reflect request Origin (browser + credentials). */
+function parseCorsOrigin(raw) {
+  if (!raw || !String(raw).trim()) return true;
+  const parts = String(raw)
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (parts.length === 0) return true;
+  if (parts.length === 1) return parts[0];
+  return parts;
+}
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import recordRoutes from './routes/recordRoutes.js';
@@ -31,9 +43,11 @@ export function createApp() {
   const app = express();
 
   app.use(helmet());
+
+  const corsOrigin = parseCorsOrigin(process.env.CORS_ORIGIN);
   app.use(
     cors({
-      origin: process.env.CORS_ORIGIN || true,
+      origin: corsOrigin,
       credentials: true,
     })
   );
