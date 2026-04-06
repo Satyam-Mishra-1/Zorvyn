@@ -1,3 +1,4 @@
+
 # 💰 Finance Data Processing and Access Control
 
 This project is a **full-stack backend-focused system** built as part of a backend engineering assignment. It demonstrates API design, role-based access control (RBAC), financial data processing, and dashboard analytics.
@@ -8,16 +9,62 @@ The system consists of:
 
 ---
 
+# 📸 UI Preview
+
+## 🔐 Authentication & Login
+
+![Login](./images/img1.png)
+
+---
+
+## 📊 Dashboard Overview
+
+![Dashboard](./images/img2.png)
+![Dashboard Stats](./images/img3.png)
+
+---
+
+## 💳 Financial Records
+
+![Records List](./images/img4.png)
+![Create Record](./images/img5.png)
+![Edit Record](./images/img6.png)
+
+---
+
+## 📈 Analytics & Insights
+
+![Analytics 1](./images/img7.png)
+![Analytics 2](./images/img8.png)
+![Analytics 3](./images/img9.png)
+
+---
+
+## 👤 User & Role Management
+
+![Users List](./images/img10.png)
+![Create User](./images/img11.png)
+![Role Assignment](./images/img12.png)
+
+---
+
+## ⚙️ Additional UI Screens
+
+![Extra UI 1](./images/img13.png)
+![Extra UI 2](./images/img14.png)
+![Extra UI 3](./images/img15.png)
+
+---
+
 # 🔑 Demo Accounts
 
 This application includes pre-configured demo users for different roles:
 
 | Role    | Email                                             | Password    |
 | ------- | ------------------------------------------------- | ----------- |
-| Admin   | [admin@example.com](mailto:admin@example.com)     | Admin123!   |
-| Analyst | [analyst@example.com](mailto:analyst@example.com) | Analyst123! |
-| Viewer  | [viewer@example.com](mailto:viewer@example.com)   | Viewer123!  |
-
+| Admin   | admin@example.com     | Admin123!   |
+| Analyst | analyst@example.com | Analyst123! |
+| Viewer  | viewer@example.com   | Viewer123!  |
 
 ---
 
@@ -194,7 +241,6 @@ Frontend runs at:
 http://localhost:5173
 ```
 
-
 ---
 
 # 🌐 Environment Variables
@@ -256,7 +302,4 @@ VITE_API_URL=http://localhost:4000
 # 👨‍💻 Author
 
 **Satyam Mishra**
-Backend Developer 
-
----
-
+Backend Developer
